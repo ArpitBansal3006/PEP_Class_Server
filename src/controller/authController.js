@@ -5,6 +5,7 @@ const authController={
     login:(request, response)=>{
         // those values are here because of express.json() middleware
         const{username,password}=request.body;
+        
         if(username==='admin' && password==='admin'){
             const userDetails={
                 name:"Arpit",
@@ -17,6 +18,7 @@ const authController={
                 domain:'localhost',// specified domain
                 path:'/'//available on which path on the browser ,here it is available for all pages
             });
+            
             response.json({message:'User authenticated',userDetails: userDetails});
 
         }
